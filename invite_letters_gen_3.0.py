@@ -85,7 +85,7 @@ print("******** WELCOME TO Invite Letters 3.0    -   By: Dr.m DEV *********")
 window = Tk()
 window.minsize(700,700)
 window.maxsize(705,705)
-window.title("Invite Letters Gen 1.0")
+window.title("Invite Letters Gen 3.0")
 ################## Positions:
 ######titles:
 title_x = 140
