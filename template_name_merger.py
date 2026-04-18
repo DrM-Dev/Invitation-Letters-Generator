@@ -1,9 +1,11 @@
 #=================
+# make sure to install:
 # import pymupdf
+# import pymupdf_fonts
+# #-----------------
+# then import:
 import fitz  # PyMuPDF
 
-# import io
-# from PIL import Image
 
 finished_extraction = False
 
@@ -39,12 +41,34 @@ def extract_everything(pdf_path,target_name,output_dir):
 
         #----------------------------------------------ADDING THE NEW NAME
         for inst in text_instances:
+            #    ------    #
             page.insert_text(
                 inst.bl, #<---------you can change this bottom-left position
                 new_name,
-                fontsize=14,
+                fontname = "tibo",
+                fontsize=18,
                 color=(0, 0, 0) #black
             )
+    #if you are a dev, here are other names for fonts in "fitz" PyMuPDF-package:
+    #fonts:
+    #Helvetica
+    # helv - normal
+    # heit - italic
+    # hebo - bold
+    # hebi - bold italic
+    #
+    #Courier
+    # cour - normal
+    # coit - italic
+    # cobo - bold
+    # cobi - bold italic
+    #
+    #Times-Roman
+    # tiro - normal
+    # tiit - italic
+    # tibo - bold
+    # tibi - bold italic
+
     #directions:
     # rect.tl(top - left),
     # rect.tr(top - right),
