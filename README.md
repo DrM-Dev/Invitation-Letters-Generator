@@ -1,4 +1,4 @@
-# Invite-Letters-Generator
+# Invite-Letters-Generator v3
 generates invitation letters in pdf format, following a list of name you provide :)
 
 #__________________________
