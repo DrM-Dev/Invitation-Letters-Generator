@@ -213,7 +213,7 @@ error_prompt2 = Label(text="You seem to have deleted/relocated [template letter.
 
 def no_template_error_feedback():
     # DEBUGGGG
-    print("NO TEMPLATE")
+    # print("NO TEMPLATE")
     error_title2.place(x=error_title_place_x, y=error_title_place_y)
     error_prompt2.place(x=promx, y=promy)
     # image:
@@ -239,7 +239,7 @@ def no_template_error_feedback():
     # Save the file
     pdf_temp.output("template letter.pdf")
     # DEBUG
-    print("TEMPLATE CREATED")
+    # print("TEMPLATE CREATED")
     # -------------------------------
     # ---------------old text-creator:
     # with open("template letter.pdf", "w") as invited_names_file:
@@ -264,7 +264,7 @@ def filtering_names():
         ####
         filter_n_list.append(fixed_name)
     # ---------------#DEBUG
-    print(filter_n_list)
+    # print(filter_n_list)
 
     # ===[Fetching the letter template]=============================
     ####
@@ -301,7 +301,7 @@ def filtering_names():
             letters_generated = True
             #|# debug
             #V#
-            print(letters_generated)
+            # print(letters_generated)
 
         #########################
         except FileNotFoundError:
@@ -389,7 +389,7 @@ def next_button1():
                 warning_1.place(x=promx, y=promy)
                 file_not_found.place(x=10000, y=10000)
                 #DEBUG
-                print("NO NAMES")
+                # print("NO NAMES")
                 #################
                 #RETRY?
                 retry_button = Button(text="Retry?", font=(font_n, 10, "bold"), justify="left", command=retry)
@@ -418,8 +418,8 @@ def next_button1():
             # window.destroy()  # <!> end-code
             #
             # DEBUG
-            print("NO FILE")
-            print("END")
+            # print("NO FILE")
+            # print("END")
             #################
             # RETRY?
             retry_button = Button(text="Retry?", font=(font_n, 10, "bold"), justify="left", command=retry)
