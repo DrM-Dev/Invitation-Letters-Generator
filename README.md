@@ -12,3 +12,4 @@ Notes:
 -you can use it to replicate any letters, not just for invite-letters :)
 other examples like:
 1. Birthday Cards
+2. Celebration Cards (like Happy-Halloween/Christmas Card)
