@@ -6,4 +6,4 @@ generates invitation letters in pdf format, following a list of name you provide
 you can use the provided template at [template letter.pdf]
 and list the names of invitees in [invited names.txt]
 
-note: you cane make your own new PDF template, just make sure to mark the names of the invitees as [name]
+note: you cane make your own new PDF template, just make sure to mark the names of the invitees as [name] inside the template letter.pdf you just created
