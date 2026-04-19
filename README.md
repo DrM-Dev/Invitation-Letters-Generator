@@ -13,3 +13,4 @@ Notes:
 other examples like:
 1. Birthday Cards
 2. Celebration Cards (like Happy-Halloween/Christmas Card)
+3. Announcment for select group of people within your circle of friends/coworkers
