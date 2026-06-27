@@ -1,31 +1,41 @@
 import customtkinter
 from tkinter import messagebox
 
+numbers_list = [0,1,2,3,4,5,6,7,8,9]
+run_it = False
 
 def open_input_dialog():
-    # Create and display the input dialog window
-
+    global run_it
     # 2. Pass 'root' as the master to stop the flashing window glitch
     dialog = customtkinter.CTkInputDialog(
-        text="Please enter your text here:",
-        title="Input Required",
+        text="14 is recommended, but depending on your template, you can increase it",
+        title="Please enter your text size here:",
     )
-    #_____________________________
-    # dialog.iconbitmap("images/saved_cake_bitmap.ico")
-
     #_____________________________Getting input:
     user_input = dialog.get_input()
     ##########
-    # Handle the user's action
-    if user_input is not None:
-        if user_input.strip() == "":
-            messagebox.showinfo(title="No Name Entered", message="Please write a birthday date name to remove!")
-            return ""
-        else:
-            messagebox.showinfo(title="Target Acquired", message=f"Birthday entry [{user_input}] will be deleted!")
-            return user_input
+    run_it = False
+    ##########
+    for char in list(user_input):
+        if int(char) not in numbers_list:
+            run_it = False
+            messagebox.showinfo(title="No letters allowed!", message="Please write numbers only")
+    #----
+    if user_input.strip() == "":
+        messagebox.showinfo(title="No Number Entered", message="Please write a fitting number")
+        run_it = False
+    #----
     else:
-        messagebox.showinfo(title="Deletion Canceled", message="Nothing was deleted, retuning to note book browser :)")
-        return ""
+        run_it =True
+    #___________________________
+    if run_it:
+        print(user_input)
+        return int(user_input)
+    else:
+        run_it = False
+        #----
+        print(run_it)
+        return run_it
 
-open_input_dialog()
+# DEBUG:
+# open_input_dialog()

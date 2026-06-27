@@ -6,11 +6,10 @@
 # then import:
 import fitz  # PyMuPDF
 
-
 finished_extraction = False
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++
-def extract_everything(pdf_path,target_name,output_dir):
+def extract_everything(pdf_path,target_name,output_dir,font_size):
     global finished_extraction
     is_extraction_complete = finished_extraction
 
@@ -40,13 +39,18 @@ def extract_everything(pdf_path,target_name,output_dir):
         page.apply_redactions(0)
 
         #----------------------------------------------ADDING THE NEW NAME
+        # font_size check
+        font_size = int(font_size) #turning fontsize into int
+        if font_size <= 0:
+            font_size = 14
+        #
         for inst in text_instances:
             #    ------    #
             page.insert_text(
                 inst.bl, #<---------you can change this bottom-left position
                 new_name,
                 fontname = "tibo",
-                fontsize=75,
+                fontsize=font_size,   #fontsizefont_size -> font_size
                 color=(0, 0, 0) #black
             )
     #if you are a dev, here are other names for fonts in "fitz" PyMuPDF-package:

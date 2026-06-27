@@ -28,6 +28,10 @@ names_list = []
 names_set_up = False
 #
 font_name = "Times New Roman" #font used in ------> template letter.pdf
+#
+#-----------------
+import input_box_class
+global picked_size
 
 
 
@@ -251,6 +255,8 @@ def filtering_names():
     global names_list
     global names_set_up
     ####
+    global picked_size
+    ####
     global font_name
     ####
     letters_generated = False
@@ -279,6 +285,7 @@ def filtering_names():
 
         #____________________________
         try:
+            global picked_size
             pdf_path = r"template letter.pdf"
             #+++++++++++++++++++++++++
             #+++++++++++++++++++++++++
@@ -288,6 +295,7 @@ def filtering_names():
                 template_name_merger.extract_everything(pdf_path=pdf_path,
                                                         target_name=name,
                                                         output_dir=output_directory,
+                                                        font_size=picked_size
                 )
                 #----x----x----x----x----x----x----x----x----x----x
             template_name_merger.finished_extraction = True
@@ -372,6 +380,20 @@ def next_button1():
         #
         ############################################
         ############################################
+        ####
+        # selecting font size:
+        def select_font_size():
+            global picked_size
+            picked_value = input_box_class.open_input_dialog()
+            #-------------
+            if not picked_value:
+                select_font_size()
+            else:
+                picked_size = picked_value
+        #___________________________________PICKING FONT SIZE:
+        select_font_size()
+
+        ####RUNNING TESTS:
         try:
             f = open("invited names.txt", "r")  # opened_file
             names_list = f.readlines()
